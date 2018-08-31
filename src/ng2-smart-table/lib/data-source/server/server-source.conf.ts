@@ -17,6 +17,7 @@ export class ServerSourceConf {
   filterFieldKey: string;
   totalKey: string;
   dataKey: string;
+  httpParams: any;
 
   constructor(
     { endPoint = '', sortFieldKey = '', sortDirKey = '',
