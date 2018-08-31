@@ -1,3 +1,5 @@
+import { HttpParams } from '@angular/common/http';
+
 export class ServerSourceConf {
 
   protected static readonly SORT_FIELD_KEY = '_sort';
@@ -17,11 +19,11 @@ export class ServerSourceConf {
   filterFieldKey: string;
   totalKey: string;
   dataKey: string;
-  httpParams: any;
+  httpParams: HttpParams;
 
   constructor(
     { endPoint = '', sortFieldKey = '', sortDirKey = '',
-      pagerPageKey = '', pagerLimitKey = '', filterFieldKey = '', totalKey = '', dataKey = '' } = {}) {
+      pagerPageKey = '', pagerLimitKey = '', filterFieldKey = '', totalKey = '', dataKey = '', _httpParams = undefined } = {}) {
 
     this.endPoint = endPoint ? endPoint : '';
 
@@ -32,5 +34,6 @@ export class ServerSourceConf {
     this.filterFieldKey = filterFieldKey ? filterFieldKey : ServerSourceConf.FILTER_FIELD_KEY;
     this.totalKey = totalKey ? totalKey : ServerSourceConf.TOTAL_KEY;
     this.dataKey = dataKey ? dataKey : ServerSourceConf.DATA_KEY;
+    this.httpParams = _httpParams;
   }
 }
